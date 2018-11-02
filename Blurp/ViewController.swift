@@ -1,20 +1,19 @@
-//
-//  ViewController.swift
-//  Blurp
-//
-//  Created by Marcin Karski on 02/11/2018.
-//  Copyright © 2018 Marcin Karski. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupView()
     }
-
-
+    
+    fileprivate func setupView() {
+        let image = UIImage(named: "img5")
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([imageView.leftAnchor.constraint(equalTo: view.leftAnchor), imageView.topAnchor.constraint(equalTo: view.topAnchor), imageView.rightAnchor.constraint(equalTo: view.rightAnchor), imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+    }
 }
-
